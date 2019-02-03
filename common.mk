@@ -321,7 +321,6 @@ PRODUCT_COPY_FILES += \
 
 # NFC - Secure Element
 PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0 \
     android.hardware.secure_element@1.0-service \
     SecureElement
 
@@ -380,8 +379,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0 \
     android.hardware.radio.deprecated@1.0 \
-    android.hardware.radio@1.0 \
-    android.hardware.radio@1.1 \
     android.hardware.radio@1.2 \
     libprotobuf-cpp-full \
     librmnetctl \
