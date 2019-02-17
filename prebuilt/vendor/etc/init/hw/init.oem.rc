@@ -99,9 +99,6 @@ on post-fs-data
 
     mkdir /data/vendor/misc/qsee/face/  0770 system system
 
-    #insmod /vendor/lib/modules/opchain.ko
-    #insmod /vendor/lib/modules-aging/opchain.ko
-
 #changhua add for fingerint
 on boot
     chmod 0664 /sys/devices/soc/soc:fpc_fpc1020/irq
@@ -194,10 +191,6 @@ on boot
     chmod 666 /sys/class/leds/green/brightness
     chmod 666 /sys/class/leds/blue/brightness
 
-    # Setup coredump mechanism
-    #chmod 0755 /system/bin/coredump.sh
-    #write /proc/sys/kernel/core_pattern |/system/bin/coredump.sh\ %p\ %u\ %t
-
     #lifeng@bsp tp 2015/6/3 for firmware update
     write /sys/bus/i2c/devices/5-0020/tp_fw_update 0
     #write /proc/s1302/fw_update 0
@@ -282,11 +275,6 @@ service bugreport /system/bin/dumpstate -d -p -B -z \
     class main
     disabled
     oneshot
-
-#lifei@oneplus.media, 2016/02/14,  add service for CTS and engineer app
-#service oem_audio_device /system/bin/chcon u:object_r:oem_audio_device:s0 /dev/snd
-#    class late_start
-#    oneshot
 
 #davidliu@bsp 2017/04/14 Add OTG switch
 on property:persist.sys.oem.otg_support=true

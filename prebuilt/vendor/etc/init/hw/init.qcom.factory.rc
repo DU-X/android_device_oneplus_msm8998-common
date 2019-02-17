@@ -76,7 +76,7 @@ on mmi && property:ro.bootmode=ffbm-00
 
     start fastmmi
     # start qcom-post-boot to set the misc partition path property value
-    start vendor.qcom-post-boot
+    start qcom-post-boot
     start mmi_diag
 
 on mmi && property:ro.bootmode=ffbm-01
@@ -88,7 +88,7 @@ on mmi && property:ro.bootmode=ffbm-01
 
     start fastmmi
     ## start qcom-post-boot to set the misc partition path property value
-    start vendor.qcom-post-boot
+    start qcom-post-boot
     start mmi_diag
 
 on property:persist.vendor.usb.config=* && property:ro.bootmode=ffbm-00
@@ -172,7 +172,7 @@ service vendor.audio_tc229 /vendor/bin/mm-audio-ftm -tc 229
     disabled
     oneshot
 
-service vendor.audio_tc330 /vendor/bin/mm-audio-ftm -tc 230
+service vendor.audio_tc230 /vendor/bin/mm-audio-ftm -tc 230
     user audio
     group audio
     disabled
