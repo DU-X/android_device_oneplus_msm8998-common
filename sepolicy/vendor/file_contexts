@@ -1,6 +1,9 @@
 # Alipay
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.ifaa@2\.0-service    u:object_r:hal_ifaa_default_exec:s0
 
+# Authsecret
+/(vendor|system/vendor)/bin/hw/android\.hardware\.authsecret@1\.0-service                      u:object_r:hal_authsecret_default_exec:s0
+
 # Block devices
 # We have a couple of non-standard NV partitions
 /dev/block/platform/soc/1da4000.ufshc/by-name/oem_dycnvbk       u:object_r:modem_efs_partition_device:s0
@@ -35,15 +38,21 @@
 /data/fpc_images(/.*)?                                                                        u:object_r:fingerprintd_data_file:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-custom u:object_r:hal_fingerprint_default_exec:s0
 
+# Firmware
+/sys/devices/soc/soc:qcom,ipa_fws@1e08000/firmware(/.*)?                                      u:object_r:sysfs_data:s0
+/sys/devices/soc/1d0101c.qcom,spss/firmware(/.*)?                                             u:object_r:sysfs_data:s0
+/sys/devices/soc/171c0000.slim/tasha-slim-pgd/tasha_codec/firmware(/.*)?                      u:object_r:sysfs_data:s0
+/sys/devices/soc/18800000.qcom,icnss/firmware(/.*)?                                           u:object_r:sysfs_data:s0
+
 # Lights
 /sys/class/leds(/.*)?                                                                                    u:object_r:sysfs_leds:s0
 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:gpio-leds/leds(/.*)? u:object_r:sysfs_leds:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.oneplus_8998                        u:object_r:hal_light_default_exec:s0
 
 # Keylayout
-/vendor/usr/keylayout/fpc1020.kl                                u:object_r:vendor_keylayout_file:s0
-/vendor/usr/keylayout/synaptics.kl                              u:object_r:vendor_keylayout_file:s0
-/vendor/usr/keylayout/synaptics_s3320.kl                        u:object_r:vendor_keylayout_file:s0
+/(vendor|system/vendor)/usr/keylayout/fpc1020.kl                                u:object_r:vendor_keylayout_file:s0
+/(vendor|system/vendor)/usr/keylayout/synaptics.kl                              u:object_r:vendor_keylayout_file:s0
+/(vendor|system/vendor)/usr/keylayout/synaptics_s3320.kl                        u:object_r:vendor_keylayout_file:s0
 
 # Param
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.param@1\.0-service  u:object_r:hal_param_default_exec:s0
@@ -84,7 +93,7 @@
 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
 
 # USB HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.basic     u:object_r:hal_usb_default_exec:s0
+#/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.basic     u:object_r:hal_usb_default_exec:s0
 
 # Wifi
 /(vendor|system/vendor)/bin/wifi-mac-generator                                u:object_r:wifi_mac_generator_exec:s0

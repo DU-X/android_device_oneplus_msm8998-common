@@ -3,7 +3,7 @@ type proc_touchpanel, fs_type, proc_type;
 type sysfs_fpc, fs_type, sysfs_type;
 type sysfs_wifi, fs_type, sysfs_type;
 
-type debugfs_power_stats, fs_type, debugfs_type;
+type debugfs_power_stats, debugfs_type, fs_type;
 
 type vendor_keylayout_file, file_type, vendor_file_type;
 

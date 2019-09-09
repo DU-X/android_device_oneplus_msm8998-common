@@ -268,14 +268,6 @@ on property:sys.fastcharger=true
 on property:sys.fastcharger=false
     write /sys/class/power_supply/battery/charging_enabled 0
 
-#kenshen@framework, 2017/09/18, align AOSP other OEMs
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class main
-    disabled
-    oneshot
-
 #davidliu@bsp 2017/04/14 Add OTG switch
 on property:persist.sys.oem.otg_support=true
     write /sys/class/power_supply/usb/otg_switch 1

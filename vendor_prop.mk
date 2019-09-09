@@ -128,7 +128,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420 \
-    ro.opengles.version=196610 \
     debug.sf.hw=1 \
     debug.gralloc.gfx_ubwc_disable=0 \
     dev.pm.dyn_samplingrate=1 \
@@ -210,7 +209,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=22,20 \
     telephony.lteOnCdmaDevice=1,1 \
     keyguard.no_require_sim=true \
-    ro.com.android.dataroaming=true \
     persist.sys.oem_smooth=1 \
     persist.radio.VT_CAM_INTERFACE=1 \
     persist.radio.apm_sim_not_pwdn=1 \

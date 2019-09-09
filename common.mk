@@ -130,6 +130,10 @@ PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library
 
+# authsecret
+PRODUCT_PACKAGES += \
+    android.hardware.authsecret@1.0-service
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor \
@@ -204,6 +208,7 @@ PRODUCT_PACKAGES += \
 
 # GPS / Location
 PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.1 \
     android.hardware.gnss@1.1-impl-qti \
     android.hardware.gnss@1.1-service-qti \
     libgnss \
@@ -419,7 +424,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic
+    android.hardware.usb@1.0-service
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
@@ -430,15 +435,15 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service
 
 # VNDK
-PRODUCT_PACKAGES += \
-    vndk_package
+#PRODUCT_PACKAGES += \
+#    vndk_package
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.gnss@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.gnss@1.0-v27.so
 
 # VNDK-SP
-PRODUCT_PACKAGES += \
-    vndk-sp
+#PRODUCT_PACKAGES += \
+#    vndk-sp
 
 # VR
 PRODUCT_PACKAGES += \
